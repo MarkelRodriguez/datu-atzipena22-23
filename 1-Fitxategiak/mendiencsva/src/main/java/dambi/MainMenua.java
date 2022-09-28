@@ -1,4 +1,5 @@
-package dambi;
+
+    package dambi;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class MainMenua {
     public static final String SEPARATOR = ";";
     public static final String QUOTE = "\"";
-    private static ArrayList<Mendiak> mendiak = new ArrayList<>();
+    private static ArrayList<Mendia> mendiak = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
@@ -33,10 +34,10 @@ public class MainMenua {
             aukera = in.nextInt();
             switch (aukera) {
                 case 1:
-                    MendienZerrenda();
+                    MendienZerrendaIkusi();
                     break;
                 case 2:
-                    met2();
+                    
                     break;
 
                 case 5:
@@ -49,18 +50,43 @@ public class MainMenua {
         in.next();
     }
 
-    public static void MendienZerrenda() throws IOException {
-        BufferedReader inputStream = null;
+
+    public static void MendienZerrendaIkusi() throws IOException {
+    BufferedReader inputStream = null;
+        
+
         try {
             inputStream = new BufferedReader(new FileReader("Mendiak.csv"));
+            
+
             String l;
-            Mendiak[] mendia = new Mendiak[mendiak.size()];
-            int i = 0;
+            boolean firstLine = true;
             while ((l = inputStream.readLine()) != null) {
-                mendia[i] = new Mendiak();
-                mendiak.add(mendia[i]);
+                if (firstLine) {
+                    firstLine = false;
+                    continue;
+                }
+                String[] attributes = l.split(";");
+                
+                Mendia mendia = new Mendia(attributes[0],Integer.parseInt(attributes[1]),attributes[2]);
+                mendiak.add(mendia);
+
+                
+        
+                
             }
 
+            System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %20s %10s", "MENDIA", "ALTUERA", "PROBINTZIA");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(Mendia mendiak: mendiak){
+            System.out.format("%10s %20s %10s",
+                    mendiak.getIzena(), mendiak.getAltuera(), mendiak.getProbintzia());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
+            
         } finally {
             if (inputStream != null) {
                 inputStream.close();
@@ -68,10 +94,7 @@ public class MainMenua {
 
         }
 
-    }
-
-    
-    public static void met2() {
-
+        
+       
     }
 }
