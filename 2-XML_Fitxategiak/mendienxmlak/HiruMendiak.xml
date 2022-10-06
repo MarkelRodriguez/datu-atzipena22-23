@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Mendiak>
+    <mendiak>
+        <Mendia_Izena>Albertia</Mendia_Izena>
+        <Mendia_Altuera>868</Mendia_Altuera>
+        <Mendia_Probintzia>Araba</Mendia_Probintzia>
+    </mendiak>
+    <mendiak>
+        <Mendia_Izena>Alluitz</Mendia_Izena>
+        <Mendia_Altuera>1034</Mendia_Altuera>
+        <Mendia_Probintzia>Bizkaia</Mendia_Probintzia>
+    </mendiak>
+    <mendiak>
+        <Mendia_Izena>Anboto</Mendia_Izena>
+        <Mendia_Altuera>1331</Mendia_Altuera>
+        <Mendia_Probintzia>Bizkaia</Mendia_Probintzia>
+    </mendiak>
+</Mendiak>
